@@ -1,0 +1,64 @@
+.white {
+    background-color: white;
+}
+
+.container{
+    width: 100%;
+    position: relative; 
+    
+   
+    //display: flex;
+    //justify-content: center;
+    //align-items: flex-end;
+}
+.cuadro{
+  width: 100%;
+    //max-width: 680px;
+    height: calc(100vh - 50px);
+    &--verde{
+        background-color: green;
+    }
+   
+}
+
+@mixin center ($horizontal, $vertical) {
+    @if $horizontal{
+        left: 50%;
+        transform: translateX(-50%);
+    } @if $vertical {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    position: absolute;
+   
+}
+.paret{
+    position: relative;
+}
+
+.node{
+    @include center(false, true);
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: traslate(-50%, -50%);
+    &--figure {
+    @extend .centered;
+    background-color: #222;
+    }
+    &--image{
+        @extend .centered;
+        width: 200px;
+        height: 200px;
+    }
+
+    &--caption{
+        @extend .centered;
+        font-size: 12px;
+    }
+}
+
+
